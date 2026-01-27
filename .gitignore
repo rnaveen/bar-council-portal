@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+# package-lock.json (will be regenerated on GitHub Actions)
 
 # testing
 /coverage

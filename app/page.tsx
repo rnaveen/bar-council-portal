@@ -12,7 +12,7 @@ const sampleCandidateData = {
   name: 'KONDA REDDY. B', // Name as shown in voting table
   fullName: 'B. KONDA REDDY', // Full name displayed prominently
   serialNumber: '58', // Serial number for voting
-  imageUrl: '/candidate-photo.png', // Candidate photo
+  imageUrl: undefined, // Candidate photo - will use basePath dynamically
   slogan: 'Practical help, not slogan. Advocate welfare before everything else.',
   credentials: [
     'MEMBER, BAR COUNCIL OF TELANGANA',
@@ -55,7 +55,20 @@ export default function Home() {
 
   useEffect(() => {
     // Load enrollment data from JSON file
-    fetch('/data/enrollment.json')
+    // Handle basePath for GitHub Pages (username.github.io/repo-name)
+    const getBasePath = () => {
+      if (typeof window === 'undefined') return '';
+      const pathname = window.location.pathname;
+      // Extract repo name from URL path (first segment after domain)
+      // For GitHub Pages: username.github.io/repo-name/...
+      const pathParts = pathname.split('/').filter(Boolean);
+      return pathParts.length > 0 ? `/${pathParts[0]}` : '';
+    };
+    
+    const basePath = getBasePath();
+    const dataPath = `${basePath}/data/enrollment.json`;
+    
+    fetch(dataPath)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to load enrollment data: ${res.status} ${res.statusText}`);

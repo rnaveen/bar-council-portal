@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-// Get repository name from environment or use default
-const repoName = process.env.GITHUB_REPOSITORY?.replace(/.*\//, '') || 'bar-council-portal';
-
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
@@ -9,8 +6,9 @@ const nextConfig = {
     unoptimized: true,
   },
   // Required for GitHub Pages project sites (username.github.io/repo-name)
-  basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? `/${repoName}` : '',
+  // Update this to match your GitHub repository name
+  basePath: '/bar-council-portal',
+  assetPrefix: '/bar-council-portal',
 }
 
 module.exports = nextConfig
