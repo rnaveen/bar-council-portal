@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "convert-excel": "node scripts/convertExcel.js"
+    "convert-excel": "node scripts/convertExcel.js",
+    "export": "next build"
   },
   "dependencies": {
     "react": "^18.3.1",
