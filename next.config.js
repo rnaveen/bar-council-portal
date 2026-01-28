@@ -5,10 +5,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Required for GitHub Pages project sites (username.github.io/repo-name)
-  // Update this to match your GitHub repository name
-  basePath: '/bar-council-portal',
-  assetPrefix: '/bar-council-portal',
+  // Removed basePath and assetPrefix for custom domain usage (www.kondareddyb.com)
+  // If you need GitHub Pages support, uncomment these:
+  // basePath: '/bar-council-portal',
+  // assetPrefix: '/bar-council-portal',
 }
 
 module.exports = nextConfig
