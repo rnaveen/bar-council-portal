@@ -40,3 +40,14 @@ body {
 .animate-fade-in {
   animation: fade-in 0.5s ease-out;
 }
+
+/* Ensure candidate floater is always visible */
+.candidate-floater-container {
+  position: fixed !important;
+  bottom: 1rem !important;
+  right: 1rem !important;
+  z-index: 9999 !important;
+  visibility: visible !important;
+  display: block !important;
+  pointer-events: auto !important;
+}

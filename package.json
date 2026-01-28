@@ -8,13 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "convert-excel": "node scripts/convertExcel.js",
+    "generate-image": "node scripts/generateCandidateImage.js",
     "export": "next build"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "next": "^14.2.5",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "canvas": "^2.11.2"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import SearchPortal from '@/components/SearchPortal';
 import SearchResults from '@/components/SearchResults';
 import CandidateProfile from '@/components/CandidateProfile';
-import CandidateFloater from '@/components/CandidateFloater';
 import { EnrollmentRecord } from '@/lib/searchUtils';
 
 // Candidate data for B. Konda Reddy
@@ -134,9 +133,6 @@ export default function Home() {
       <section id="candidate" className="bg-gray-50 dark:bg-gray-900">
         <CandidateProfile candidate={sampleCandidateData} advocateName={advocateName} />
       </section>
-
-      {/* Floating Candidate Image */}
-      <CandidateFloater />
     </main>
   );
 }

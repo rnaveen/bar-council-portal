@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientFloater from "./ClientFloater";
 
 export const metadata: Metadata = {
   title: "Bar Council Enrollment Portal",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        <ClientFloater />
       </body>
     </html>
   );
