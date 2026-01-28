@@ -46,8 +46,34 @@ body {
   position: fixed !important;
   bottom: 1rem !important;
   right: 1rem !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
   visibility: visible !important;
   display: block !important;
   pointer-events: auto !important;
+  isolation: isolate !important;
+  contain: layout style paint !important;
+}
+
+/* Ensure body/html don't interfere with floater */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Media query for responsive sizing */
+@media (min-width: 640px) {
+  .candidate-floater-container img {
+    width: 10rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .candidate-floater-container img {
+    width: 12rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .candidate-floater-container img {
+    width: 14rem !important;
+  }
 }
