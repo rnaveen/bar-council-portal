@@ -110,7 +110,7 @@ export default function CandidateFloater() {
           alt="Candidate Konda Reddy. B - Vote ONE at S.No. 58"
           className="shadow-2xl rounded-lg hover:scale-105 transition-transform duration-300"
           style={{ 
-            width: '8rem',
+            width: '10em',
             height: 'auto',
             maxHeight: '80vh', 
             maxWidth: '90vw',
