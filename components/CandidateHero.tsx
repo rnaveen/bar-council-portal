@@ -26,7 +26,7 @@ export default function CandidateHero({ name, serialNumber, imageUrl, advocateNa
         <div className="border-l-4 border-blue-600 bg-gray-50 dark:bg-gray-700 p-3 sm:p-4 mb-4 sm:mb-6 rounded-r">
           <p className="text-gray-800 dark:text-gray-200 font-medium text-sm sm:text-base">
             WRITE <span className="font-bold text-orange-600 dark:text-orange-400">ONE</span> AT S.NO.{' '}
-            <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-600 dark:text-orange-400 inline">
+            <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-orange-600 dark:text-orange-400 inline">
               {serialNumber}
             </span>
           </p>
