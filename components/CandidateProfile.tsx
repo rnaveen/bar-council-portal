@@ -58,8 +58,17 @@ export default function CandidateProfile({ candidate, advocateName }: CandidateP
         )}
 
         {/* Contact and Polling Date */}
-        <div className="space-y-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="space-y-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+          {candidate.pollingDate && (
+            <div className="flex flex-col">
+              <span className="text-sm text-gray-600 dark:text-gray-400 mb-1">VOTING DAY</span>
+              <span className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                {candidate.pollingDate} <span className="text-lg font-normal">(10:30 AM to 5:00 PM)</span>
+              </span>
+            </div>
+          )}
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             {candidate.contact.phone && (
               <div className="flex items-center">
                 <svg
@@ -83,40 +92,31 @@ export default function CandidateProfile({ candidate, advocateName }: CandidateP
                 </a>
               </div>
             )}
-            
-            {candidate.pollingDate && (
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-600 dark:text-gray-400 mb-1">VOTING DAY</span>
-                <span className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                  {candidate.pollingDate}
-                </span>
+
+            {candidate.contact.email && (
+              <div className="flex items-center">
+                <svg
+                  className="w-6 h-6 text-gray-500 dark:text-gray-400 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <a
+                  href={`mailto:${candidate.contact.email}`}
+                  className="text-lg text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {candidate.contact.email}
+                </a>
               </div>
             )}
           </div>
-
-          {candidate.contact.email && (
-            <div className="flex items-center">
-              <svg
-                className="w-6 h-6 text-gray-500 dark:text-gray-400 mr-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              <a
-                href={`mailto:${candidate.contact.email}`}
-                className="text-lg text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                {candidate.contact.email}
-              </a>
-            </div>
-          )}
         </div>
       </div>
 
